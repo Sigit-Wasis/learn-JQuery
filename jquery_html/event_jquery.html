@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Event dan Keyword this di Jquery</title>
+	<style type="text/css" media="screen">
+		body {
+			margin: 50px;
+		}
+	</style>
+	<!-- instalasi via CDN -->
+	<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+</head>
+<body>
+
+	<img src="qodr.png">
+	<h1>Belajar JQuery</h1>
+	<button>Klik Saya</button>
+	<p>Event adalah kejadi yang terjadi pada browser ataupun inputan dari user dimna kita ingin melakukan respon.
+		Untuk table contoh beberapa event ada pada link berikut: <a href="https://www.w3schools.com/jquery/jquery_events.asp">KLIK</a> </p>
+
+	<div class="boxes">Baris Pertama</div>
+	<div class="boxes">Baris Kedua</div>
+	<div class="boxes">Baris Diantara</div>
+	<div class="boxes">Baris Ketiga</div>
+	<br>
+	<div class="mouse">Event Mouse pada JQuery --=-- klik aku nanti hilang --=--</div>
+	<br>
+	<h1>Keypress</h1>
+  	<p>Ketik asal aja udah</p>
+  	<input type="text">
+  	<p>Jumlah ketikan sebanyak : <span>0</span></p>
+	
+	<script>
+		// memastikan file sudah diload dengan sempurna
+		$(document).ready(function(){
+
+			// ============= Event Click ====================
+
+			// ketika tag h1 diclick maka berubah menjadi warna biru
+			$('h1').click(function(){
+				$('h1').css('color', 'blue');				
+			});
+
+			$('button').click(function(){
+				alert('selamat Anda Sukses');
+			});
+
+			// ========= Event Mouse =========
+
+			// ketika mouse berada di atas
+			$('h1').mouseenter(function(){
+				$('h1').css('color', 'yellow');				
+			});
+
+			// ketika mouse berada di ninggalin
+			$('h1').mouseleave(function(){
+				$('h1').css('color', 'green');				
+			});
+
+			// mengubah pada salah satu class boxes
+			// this sudah mengetahui bahwa ia berada pada elemen tertentu
+			$('.boxes').mouseenter(function(){
+				$(this).css('color', 'orange');				
+			});
+
+			// mouse over jika di arah kan pada text akan menghilang
+			$('.mouse').mouseover(function() {
+				$('.mouse').fadeOut(100);
+			});
+
+			// =========== End Event Mouse =========
+
+			// =========== Event Keyboard =========== 
+			x = 0;
+			$(function() {
+				$("input").keypress(function() {
+					$("span").text(x+=1);
+				});
+			});			
+			// =========== End Event Keyboard =========== 
+
+		});
+	</script>
+</body>
+</html>
