@@ -20,6 +20,7 @@
 
 	<div class="boxes">Baris Pertama</div>
 	<div class="boxes">Baris Kedua</div>
+	<div class="boxes">Baris Diantara</div>
 	<div class="boxes">Baris Ketiga</div>
 	
 	<script>
@@ -31,6 +32,21 @@
 			$('#box1').css('color', 'blue');
 			// memilih class
 			$('.boxes').css('color', 'orange');
+
+			// memilih class lebih spesifik di bagian awal class
+			// dengan multiple css
+			$('.boxes:first').css({
+   				'font-size' : '20px',
+   				'color' : 'green',
+   				'font-weight' : 'bold',
+			});
+
+			// memilih class bagian akhir
+			$('.boxes:last').css('color', 'aqua');
+
+			// memilih class diantaranya 
+			// dua merupakan index dari banyaknya class dimulai dari 0
+			$('.boxes:eq(2)').css('color', 'black');
 		});
 	</script>
 </body>
