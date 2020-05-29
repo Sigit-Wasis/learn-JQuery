@@ -32,7 +32,23 @@
 			// untuk menambahkan ada bebearapa fungsi dantaranya:
 			// append, prepend | after dan before
 
+			// Jika menggunakan append maka muncul tag tambahan di bagian akhir
+			// Jika menggunakan prepend maka muncul tah tambahan di bagian awal
+
 			$('.wrap').append('<div>Hallo</div>');
+			$('.wrap').prepend('<div>Hallo</div>');
+
+			// Jika menggunakan agter maka muncul tah tambahan dibagian akhir namun diluar dari class wrap
+			// Jika menggunakan agter maka muncul tah tambahan dibagian awal namun diluar dari class wrap
+
+			$('.wrap').after('<div>Hallo</div>');
+			$('.wrap').before('<div>Hallo</div>');
+
+			// Remove dan Empty
+			// remove menghilangkan secara keseluruhan baik class wrap dan contennya
+			$('.wrap').remove();
+			// empty menghilangkan content dari class wrap saja
+			$('.wrap').empty();
 		});
 	</script>
 </body>
