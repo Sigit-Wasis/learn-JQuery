@@ -17,13 +17,12 @@
 	<img src="qodr.png">
 	<h1>Belajar JQuery</h1>
 
-	<div class="boxes">Baris Pertama</div>
-	<div class="boxes">Baris Kedua</div>
-	<div class="boxes">Baris Diantara</div>
-	<div class="boxes">Baris Ketiga</div>
-	<br>
-
-
+	<div class="wrap">
+		<div class="boxes">Baris Pertama</div>
+		<div class="boxes">Baris Kedua</div>
+		<div class="boxes">Baris Diantara</div>
+		<div class="boxes">Baris Ketiga</div>
+	</div>
 
 	<script>
 		// memastikan file sudah diload dengan sempurna
@@ -33,7 +32,7 @@
 			// untuk menambahkan ada bebearapa fungsi dantaranya:
 			// append, prepend | after dan before
 
-			
+			$('.wrap').append('<div>Hallo</div>');
 		});
 	</script>
 </body>
