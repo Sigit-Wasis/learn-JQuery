@@ -35,44 +35,60 @@
 		$(document).ready(function(){
 
 			// -------- Hide - Show - Toggle ----------
-			$('#btn1').click(function() {
-				$('#box1').show() ;
-			});
 
-			$('#btn2').click(function() {
-				$('#box1').hide() ;
-			});
+			// $('#btn1').click(function() {
+			// 	$('#box1').show() ;
+			// });
+
+			// $('#btn2').click(function() {
+			// 	$('#box1').hide() ;
+			// });
+
+			// // // jika toogle bisa menghemat jadi bisa show dan hide
+			// $('#btn3').click(function() {
+			// 	$('#box1').toggle() ;
+			// });
+
+			// // --------- fadeIn fadeOut fadeTo(time, opacity) fadeToggle
+
+			// // menggunakan fade ini maka akan muncul secara perlahan dan transparansi
+			// $('#btn1').click(function() {
+			// 	$('#box1').fadeIn();
+			// });
+
+			// // jika menggunakan waktu maka beri pada parameter
+			// $('#btn1').click(function() {
+			// 	$('#box1').fadeIn(1000);
+			// });
+
+			// $('#btn2').click(function() {
+			// 	$('#box1').fadeOut();
+			// });
 
 			// // jika toogle bisa menghemat jadi bisa show dan hide
-			$('#btn3').click(function() {
-				$('#box1').toggle() ;
-			});
+			// $('#btn3').click(function() {
+			// 	$('#box1').fadeToggle() ;
+			// });
 
-			// --------- fadeIn fadeOut fadeTo(time, opacity) fadeToggle
-			// menggunakan fade ini maka akan muncul secara perlahan dan transparansi
-			$('#btn1').click(function() {
-				$('#box1').fadeIn();
-			});
+			// // jika menggunakan fadeTo(time, opacity)
+			// // time 2000 adalah 2 detik dan nilai opacity 0 - 1
+			// // jika hanya hilang secara setengah transparansinya maka 0,5
+			// $('#btn3').click(function() {
+			// 	$('#box1').fadeTo(2000, 0.5);
+			// });
 
-			// jika menggunakan waktu maka beri pada parameter
+			// --------- slideUp slideDown slideToggle ----------
+
 			$('#btn1').click(function() {
-				$('#box1').fadeIn(1000);
+				$('#box1').slideUp() ;
 			});
 
 			$('#btn2').click(function() {
-				$('#box1').fadeOut();
+				$('#box1').slideDown(2000) ;
 			});
 
-			// jika toogle bisa menghemat jadi bisa show dan hide
 			$('#btn3').click(function() {
-				$('#box1').fadeToggle() ;
-			});
-
-			// jika menggunakan fadeTo(time, opacity)
-			// time 2000 adalah 2 detik dan nilai opacity 0 - 1
-			// jika hanya hilang secara setengah transparansinya maka 0,5
-			$('#btn3').click(function() {
-				$('#box1').fadeTo(2000, 0.5);
+				$('#box1').slideToggle(2000) ;
 			});
 
 		});
