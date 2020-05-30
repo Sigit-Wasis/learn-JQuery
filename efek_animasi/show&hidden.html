@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Menampilkan dan Menyembunyikan di Jquery</title>
+	<style type="text/css" media="screen">
+		body {
+			margin: 50px;
+		}
+
+		#box1 {
+			background-color: yellow;
+			color: red;
+			height: 100px;
+			width: 100px;
+		}
+	</style>
+	<!-- instalasi via CDN -->
+	<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+</head>
+<body>
+
+	<img src="../jquery_html/qodr.png">
+	<h1>Belajar JQuery</h1>
+	<div id="box1">BOX 1</div>
+	<br>
+
+	<button id="btn1">Show</button>
+	<button id="btn2">Hidden</button>
+	<button id="btn3">Toggle</button>
+	
+	<script>
+		// memastikan file sudah diload dengan sempurna
+		$(document).ready(function(){
+
+			// -------- Hide - Show - Toggle ----------
+			$('#btn1').click(function() {
+				$('#box1').show() ;
+			});
+
+			$('#btn2').click(function() {
+				$('#box1').hide() ;
+			});
+
+			// // jika toogle bisa menghemat jadi bisa show dan hide
+			$('#btn3').click(function() {
+				$('#box1').toggle() ;
+			});
+
+			// --------- fadeIn fadeOut fadeTo(time, opacity) fadeToggle
+			// menggunakan fade ini maka akan muncul secara perlahan dan transparansi
+			$('#btn1').click(function() {
+				$('#box1').fadeIn();
+			});
+
+			// jika menggunakan waktu maka beri pada parameter
+			$('#btn1').click(function() {
+				$('#box1').fadeIn(1000);
+			});
+
+			$('#btn2').click(function() {
+				$('#box1').fadeOut();
+			});
+
+			// jika toogle bisa menghemat jadi bisa show dan hide
+			$('#btn3').click(function() {
+				$('#box1').fadeToggle() ;
+			});
+
+			// jika menggunakan fadeTo(time, opacity)
+			// time 2000 adalah 2 detik dan nilai opacity 0 - 1
+			// jika hanya hilang secara setengah transparansinya maka 0,5
+			$('#btn3').click(function() {
+				$('#box1').fadeTo(2000, 0.5);
+			});
+
+		});
+	</script>
+</body>
+</html>
