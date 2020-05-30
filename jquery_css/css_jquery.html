@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Css di Jquery</title>
+	<style type="text/css" media="screen">
+		body {
+			margin: 50px;
+		}
+
+		.change {
+			background-color: yellow;
+			color: red;
+		}
+	</style>
+	<!-- instalasi via CDN -->
+	<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+</head>
+<body>
+
+	<img src="../jquery_html/qodr.png">
+	<h1 class="change">Belajar JQuery</h1>
+	<div id="box1">BOX 1</div>
+
+	<div class="boxes">Baris Pertama</div>
+	<div class="boxes">Baris Kedua</div>
+	<div class="boxes">Baris Diantara</div>
+	<div class="boxes">Baris Ketiga</div>
+	
+	<script>
+		// memastikan file sudah diload dengan sempurna
+		$(document).ready(function(){
+
+			// -------- CSS banyak property ----------
+		
+			// ketika tag h1 diclick maka berubah sesuai css
+			// menggunakan camelcase pada saat 2 css 2 kata
+			$('h1').click(function(){
+				$('h1').css({
+					'color' : 'blue',
+					'fontSize' : '20px',
+					'backgroundColor' : 'yellow'
+				});				
+			});
+
+			// addClass adalah menambah class pada tag html namun pada style sudah ada
+			$('h1').click(function() {
+				$('h1').addClass('change');
+			});
+
+			// lawan dari addClass adalah removeClass namun langkah awal kita harus menambahkan class pada tag html
+			$('h1').click(function() {
+				$('h1').removeClass('change');
+			});
+
+			// untuk menggabungkan keduanya menggunakan toggle class
+			// jadi jika ada class change maka akan menghapus dan jika tidak ada maka akan menambahkan class change
+			$('h1').click(function() {
+				$('h1').toggleClass('change');
+			});			
+		});
+	</script>
+</body>
+</html>
