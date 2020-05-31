@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Traversing Siblings di Jquery</title>
+	<style type="text/css" media="screen">
+		body {
+			margin: 50px;
+		}
+	</style>
+	<!-- instalasi via CDN -->
+	<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+</head>
+<body>
+
+	<img src="../jquery_html/qodr.png">
+	<h1>Belajar Traversing</h1>
+	<p>jQuery traversing, yang berarti "bergerak", digunakan untuk "menemukan" (atau memilih) elemen HTML berdasarkan hubungannya dengan elemen lain</p>
+	<br>
+
+	<ul>
+		<li>Belajar!</li>
+		<li>CSS!</li>
+		<li>Phalcon</li>
+		<li>Wordpress</li>
+		<li id="css">Jquery!</li>
+		<li>HTML!</li>
+		<li>Laravel</li>
+		<li>Codeigniter</li>
+		<li id="db">Database!</li>
+	</ul>
+	
+	<script>
+		// memastikan file sudah diload dengan sempurna
+		$(document).ready(function(){
+
+			// ============ Traversing Siblings ============
+			// siblings next nextAll nextUntil('param') ~ prev
+
+			// siblings (merupakan yang 1 parent)
+			$('#css').siblings().css('fontSize', '30px');
+
+			// next adalah memilih setelah id="css"
+			$('#css').next().css('background', 'red');			
+
+			// // nextAll adalah merubah elemen setelah id="css"
+			$('#css').nextAll().css('background', 'orange');
+ 
+			// nextUntil adalah memilih setelahnya namun dibatasi pada id="db"
+			$('#css').nextUntil('#db').css('color', 'red');
+
+			// prev adalah memilih sebelumnya
+			$('#css').prev().css('color', 'brown');
+
+			// prevUntil adalah memilih sebelum id="css" 
+			$('#css').prevUntil('#db').css('color', 'green');			
+
+		});
+	</script>
+</body>
+</html> 
