@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Menampilkan dan Menyembunyikan di Jquery</title>
+	<style type="text/css" media="screen">
+		body {
+			margin: 50px;
+		}
+
+		#box1 {
+			background-color: yellow;
+			color: red;
+			height: 100px;
+			width: 100px;
+		}
+	</style>
+	<!-- instalasi via CDN -->
+	<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+</head>
+<body>
+
+	<img src="../jquery_html/qodr.png">
+	<h1>Belajar JQuery</h1>
+	<div id="box1">BOX 1</div>
+	<br>
+
+	<button id="btn1">Show</button>
+	<button id="btn2">Hidden</button>
+	<button id="btn3">Toggle</button>
+	<button id="btn4">Stop</button>
+	
+	<script>
+		// memastikan file sudah diload dengan sempurna
+		$(document).ready(function(){
+
+			$('#btn3').click(function() {
+				$('#box1').slideToggle(2000) ;
+			});
+
+			// ======= Stop Animasi - Chaining - Callback ========
+			// Stop Animasi
+			$('#btn4').click(function() {
+				$('#box1').stop() ;
+				alert('selesai!');
+			});
+
+			// Callback (fungsi yang dipanggil setelah fungsi sebelumnya selesai)
+			$('#btn1').click(function() {
+				$('#box1').slideUp(2000, munculkan);
+			});
+
+			// jika function banyak maka dapat dipisah
+			function munculkan(){
+				alert('selesai!');
+			};
+
+			// Chaining (menggabungkan beberapa metode dalam satu baris)
+			$('#btn2').click(function() {
+				$('#box1').slideUp(2000).fadeIn(2000).fadeTo(2000, 0.5);
+			});
+		});
+	</script>
+</body>
+</html> 
