@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Parent and Children di Jquery</title>
+	<style type="text/css" media="screen">
+		body {
+			margin: 50px;
+		}
+	</style>
+	<!-- instalasi via CDN -->
+	<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+</head>
+<body>
+
+	<img src="../jquery_html/qodr.png">
+	<h1>Belajar Traversing Parent and Children</h1>
+	<p>Menelusuri element html melalui anak dan pembungkus elemen atau children dan parent yang kita pilih pada JQuery</p>
+	<br>
+
+	<div id="tester">
+		<div>
+			Div pertama Aja			
+		</div>		
+		
+		<div>
+			Div kedua aja		
+			<ul>
+				<li>List Pertama</li>
+			</ul>
+
+			<ul>
+				<p> Paragraf Atas</p>
+				<li>Belajar!</li>
+				<li>CSS!</li>
+				<li>Phalcon</li>
+				<li>Wordpress</li>
+				<li id="css">Jquery!</li>
+				<li>HTML!</li>
+				<li>Laravel</li>
+				<li>Codeigniter</li>
+				<li id="db">Database!</li>
+				<div>
+					<p> Paragraf Dalam</p>
+					<span>Span Dalam</span>
+				</div>
+				<span>Span Luar</span>
+			</ul>
+		</div>
+	</div>
+	
+	<script>
+		// memastikan file sudah diload dengan sempurna
+		$(document).ready(function(){
+
+			// ============ Children find Parent parents() parentsUntil ============
+			// children mengambil 1 level dibawah ul 
+			$('ul').children().css('color', 'red');
+		
+			// jika di beri parameter maka hanyak span 1 level dibawah ul
+			$('ul').children('span').css('color', 'red');
+
+			// jika ingin mengambil span secara keseluruhan maka gunakan find
+			$('ul').find('span').css('color', 'blue');
+
+			// ============ Parent ============
+			// parent memilih 1 diatasnya
+			$('#css').parent().css('background', 'yellow');
+
+			// jika parents maka akan secara keseluruhan berwarna kuning
+			$('#css').parents().css('border', '2px solid yellow');
+
+			// jika ingin memberikan parent hanya sampai di tag ul maka tinggal tambah pada parameternya
+			$('#css').parents('ul').css('border', '2px solid yellow');
+
+			// jika ingin mengatur untuk sampai mana tah tersebut di modifikasi maka menggunakan parentsUntil
+			$('#css').parentsUntil('#tester').css('border', '2px solid yellow');			
+
+		});
+	</script>
+</body>
+</html> 
