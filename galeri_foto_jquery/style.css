@@ -1,0 +1,17 @@
+body {
+	width: 70%;
+	margin: 50px auto;
+}
+
+.container {
+	max-width: 400px;
+	margin: 0 auto;
+}
+
+.container div {
+	display: none;
+}
+
+.container img {
+	width: 100%;
+}
