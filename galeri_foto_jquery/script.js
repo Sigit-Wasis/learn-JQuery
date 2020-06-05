@@ -9,14 +9,18 @@ $(document).ready(function(){
 	// fungsi slide
 	function slide() {
 		var item = $('.container div').eq(index);
+		// item yang tidak sesuai dengan index akan terhide
 		items.hide();
+		// setiap item sesuai index maka akan muncul hanya 1 image
 		item.css('display', 'block');
 	}
 
-	// setInterval akan menjalankan fungsi sesuai waktu yang disetting
+	// setInterval akan menjalankan fungsi sesuai waktu yang disetting ex: 1500
 	var autoslide = setInterval(function() {
 		index += 1;
+		// jika index melebihi total maka dikurang 1 dan dimulai dari index 0
 		if (index > total - 1) index = 0;
+		// menjalankan fungsi slide
 		slide();
 	}, 1500);
 
