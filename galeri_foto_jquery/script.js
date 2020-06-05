@@ -22,6 +22,24 @@ $(document).ready(function(){
 		if (index > total - 1) index = 0;
 		// menjalankan fungsi slide
 		slide();
-	}, 1500);
+	}, 2000);
+
+
+	// Menggunakan Button Next
+	$('#next').click(function(){
+		index += 1;
+		// jika index melebihi total maka dikurang 1 dan dimulai dari index 0
+		if (index > total - 1) index = 0;
+		// menjalankan fungsi slide
+		slide();
+	});
+
+	// Menggunakan Button Prev
+	$('#prev').click(function(){
+		index -= 1;
+		if (index < 0) index - 1;
+		// menjalankan fungsi slide
+		slide();
+	});
 
 });
