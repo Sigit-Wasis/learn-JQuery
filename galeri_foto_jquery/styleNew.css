@@ -1,0 +1,26 @@
+body {
+	width: 70%;
+	margin: 50px auto;
+}
+
+.main-container {
+	width: 400px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+.container {
+	/* 2000px didapat dari jumlah image pada container dikali width yaitu 400px*/
+	width: 2000px;
+	margin: 0 auto;
+}
+
+.container div {
+	float: left;
+	width: 400px;
+
+}
+
+.container img {
+	width: 100%;
+}
