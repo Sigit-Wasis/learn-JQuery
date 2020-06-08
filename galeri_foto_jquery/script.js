@@ -11,6 +11,10 @@ $(document).ready(function(){
 		var item = $('.container div').eq(index);
 		// item yang tidak sesuai dengan index akan terhide
 		items.hide();
+		// jika ingin efek slide ke atas maka gunakan slideUp
+		// items.slideUp();
+		// jika ingin efek slide ke bawah maka gunakan slideDown
+		// items.slideDown();
 		// setiap item sesuai index maka akan muncul hanya 1 image
 		item.css('display', 'block');
 	}
